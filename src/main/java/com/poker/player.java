@@ -41,7 +41,7 @@ public class player {
     }
     public String toString(){
         return ("Player " +this.name + " has a balance of " + this.balance +
-                " and a hole hand of " + this.holeCards[0] + " with " + this.holeCards[1] +
+                " \nand a hole hand of " + this.holeCards[0] + " with " + this.holeCards[1] +
                 ".\nStill in game: " + this.isInGame);
     }
 

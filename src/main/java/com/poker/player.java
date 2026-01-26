@@ -24,7 +24,7 @@ public class player {
     public void addToBalance(int amount){
         this.balance += amount;
     }
-    public void subtractFromBalance(int amount){
+    public void reduceFromBalance(int amount){
         this.balance -= amount;
     }
     public standardCard[] getHoleCards(){
@@ -33,12 +33,14 @@ public class player {
     public void setHoleCards(standardCard[] holeCards){
         this.holeCards = holeCards;
     }
-    public boolean isInGame(){
+    public boolean getIsInGame(){
         return this.isInGame;
     }
-    public void setInGame (boolean isInGame){
+
+    public void setIsInGame (boolean isInGame){
         this.isInGame = isInGame;
     }
+
     public String toString(){
         return ("Player " +this.name + " has a balance of " + this.balance +
                 " \nand a hole hand of " + this.holeCards[0] + " with " + this.holeCards[1] +
@@ -53,9 +55,9 @@ public class player {
         System.out.println(p1.getBalance());
         p1.addToBalance(50);
         System.out.println(p1.getBalance());
-        p1.subtractFromBalance(25);
+        p1.reduceFromBalance(25);
         System.out.println(p1.getBalance());
-        System.out.println(p1.isInGame());
+        System.out.println(p1.getIsInGame());
         System.out.println(Arrays.toString(p1.getHoleCards()));
         System.out.println(p1.toString());
         standardCard[] holeCard2 = {new standardCard(10,"Diamonds"), new standardCard(7,"Clubs")};

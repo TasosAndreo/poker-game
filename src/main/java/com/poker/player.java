@@ -3,7 +3,7 @@ package com.poker;
 import java.util.Arrays;
 import java.util.Random;
 
-public class player {
+public class Player {
     private String name;
     private int balance;
     private standardCard[] holeCards = new standardCard[2];
@@ -50,7 +50,7 @@ public class player {
 
     public static void main(String[] args) {
         standardCard[] holeCards = {new standardCard(1,"Hearts"), new standardCard(2,"Hearts")};
-        player p1 = new player("Nick",100,holeCards);
+        Player p1 = new Player("Nick",100,holeCards);
         System.out.println(p1.getName());
         System.out.println(p1.getBalance());
         p1.addToBalance(50);

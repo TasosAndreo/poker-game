@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class pokerGame {
-    private ArrayList<player> playerList;
+    private ArrayList<Player> playerList;
     private standardDeck  gameDeck;
     private standardCard[] communityCards;
     private int winningPot;
     private int smallBlind;
     private int bigBlind;
-    private player dealer;
-    private player playerSmallBlind;
-    private player playerBigBlind;
+    private Player dealer;
+    private Player playerSmallBlind;
+    private Player playerBigBlind;
     private int[] playersTotalBets;
 
     Scanner scan = new Scanner(System.in);
 
     public pokerGame(int smallBlind){
-        this.playerList = new ArrayList<player>();
+        this.playerList = new ArrayList<Player>();
         this.gameDeck = new standardDeck();
         this.communityCards = new standardCard[5];
         this.winningPot =0;
@@ -130,7 +130,7 @@ public class pokerGame {
         System.out.println("Enter " + tempName + "s starting balance: ");
         int tempBalance = scan.nextInt();
         standardCard[] tempHoleCards = {gameDeck.getNextCard(), gameDeck.getNextCard()};
-        playerList.add(new player(tempName, tempBalance, tempHoleCards));
+        playerList.add(new Player(tempName, tempBalance, tempHoleCards));
         System.out.println(playerList.get(playerList.size()-1).toString());
     }
 

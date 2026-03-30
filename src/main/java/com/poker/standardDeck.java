@@ -2,6 +2,8 @@ package com.poker;
 
 import java.util.ArrayList;
 
+import database.DatabaseInitializer;
+
 public class standardDeck {
     private ArrayList<standardCard> deck = new ArrayList<standardCard>();
 
@@ -52,5 +54,19 @@ public class standardDeck {
         System.out.println(sd.getNextCard());
         System.out.println(sd.getNextCard());
         System.out.println(sd.getCardRemaining());
+
+        // Initialize DB
+        DatabaseInitializer.init();
+
+        PlayerRepository playerRepo = new PlayerRepository();
+        GameRepository gameRepo = new GameRepository();
+
+        int playerId = playerRepo.createPlayer("Tasos");
+        int gameId = gameRepo.createGame();
+
+        // Example result
+        gameRepo.saveResult(gameId, playerId, "WIN", 200);
+
+        System.out.println("Game saved to DB!");
     }
 }
